@@ -4,6 +4,9 @@ public class TrackCoach implements Coach {
 
     private FortuneService service;
 
+    public TrackCoach() {
+    }
+
     public TrackCoach(FortuneService service) {
         this.service = service;
     }

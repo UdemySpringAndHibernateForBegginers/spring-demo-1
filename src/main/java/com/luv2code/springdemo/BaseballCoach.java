@@ -4,6 +4,9 @@ public class BaseballCoach implements Coach {
 
     private FortuneService service;
 
+    public BaseballCoach() {
+    }
+
     public BaseballCoach(FortuneService service) {
         this.service = service;
     }

@@ -25,6 +25,9 @@
 		  class="com.luv2code.springdemo.CricketCoach">
 		<!--setter injection-->
 		<property name="service" ref="myFortuneService"/>
+		<!--literal values injection-->
+		<property name="email" value="the best coach@example.com"/>
+		<property name="team" value="Sunrisers Hyderabad"/>
 	</bean>
 
 </beans>

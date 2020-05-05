@@ -1,6 +1,8 @@
 package com.luv2code.springdemo;
 
-public class TrackCoach implements Coach {
+import org.springframework.beans.factory.DisposableBean;
+
+public class TrackCoach implements Coach, DisposableBean {
 
     private FortuneService service;
 
@@ -29,5 +31,11 @@ public class TrackCoach implements Coach {
     // == destroy method ==
     public void doMyCleanupStuff() {
         System.out.println("TrackCoach: inside doMyCleanupStuff destroy method");
+    }
+
+    // == destroy method for prototype bean ==
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("TrackCoach: inside destroy method for prototype bean");
     }
 }

@@ -17,11 +17,16 @@
 		  class="com.luv2code.springdemo.RandomFortuneService">
 	</bean>
 
+	<!-- Bean custom processor to handle calling destroy methods on prototype scoped beans -->
+	<bean id="customProcessor"
+		  class="com.luv2code.springdemo.MyCustomBeanProcessor">
+	</bean>
+
  	<bean id="myCoach"
  		class="com.luv2code.springdemo.TrackCoach"
 		  scope="prototype"
 		init-method="doMyStartupStuff"
-		destroy-method="doMyCleanupStuff">
+		destroy-method="destroy">
 		<!--constructor injection-->
 		<constructor-arg ref="myRandomFortuneService"/>
  	</bean>
